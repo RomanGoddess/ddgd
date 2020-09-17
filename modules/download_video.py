@@ -23,17 +23,17 @@ def download(url):
 	        print('Done downloading')
 	extract_filename = {}
 	with youtube_dl.YoutubeDL(extract_filename) as ydl:
-		info_dict = ydl.extract_info(url, download=False)
-      		video_url = info_dict.get("url", None)
-      		video_id = info_dict.get("id", None)
-      		video_title = info_dict.get('title', None)
-		video_extension = str(info_dict.get('ext', None))
-		filename = str(video_title)
-		filename = re.sub(r'\[\(\)\{\}\<\>\-\|\]', '', filename)
+                info_dict = ydl.extract_info(url, download=False)
+                video_url = info_dict.get("url", None)
+                video_id = info_dict.get("id", None)
+                video_title = info_dict.get('title', None)
+                video_extension = str(info_dict.get('ext', None))
+                filename = str(video_title)
+                filename = re.sub(r'\[\(\)\{\}\<\>\-\|\]', '', filename)
                 filename = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)]]', r'\1', filename)
-		filename = filename.replace("|", "")
-		filename = filename.strip()
-		filename = filename+"."+video_extension
+                filename = filename.replace("|", "")
+                filename = filename.strip()
+                filename = filename+"."+video_extension
 
 	if("youtube" in url or "youtube" in url):
 		ydl_opts = {
