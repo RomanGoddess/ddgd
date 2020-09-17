@@ -25,7 +25,7 @@ def is_downloadable(url):
 def download(url, userfile):
     filename='none'
     try:
-	ssl._create_default_https_context = ssl._create_unverified_context
+        ssl._create_default_https_context = ssl._create_unverified_context
 	filename = wget.download(url)
         name = re.sub('%20', ' ', filename)
 	if userfile:
