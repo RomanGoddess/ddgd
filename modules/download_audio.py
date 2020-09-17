@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 # Copyright (C) 2019 Atul-Kadian
 
-from __future__ import unicode_literals
+
 import youtube_dl
 import requests
-import urllib2
-from urllib import urlretrieve
+import urllib.request, urllib.error, urllib.parse
+from urllib.request import urlretrieve
 from pytube import YouTube
 import re
 
@@ -49,7 +49,7 @@ def download(url):
 
 	ydl_opts = {
 	    	'format': 'bestaudio/best',
-		'outtmpl': unicode(filename),
+		'outtmpl': str(filename),
 	    	'postprocessors': [{
 	        	'key': 'FFmpegExtractAudio',
 	        	'preferredcodec': 'mp3',
