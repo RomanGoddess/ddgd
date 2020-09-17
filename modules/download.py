@@ -7,7 +7,7 @@ import subprocess
 import os
 import logging
 import re
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import wget
 import os.path
 import ssl
@@ -38,6 +38,6 @@ def download(url, userfile):
         print("Error! Unable to download file.")
         print(e)
     else:
-        print(filename+ ' is successfully downloaded locally ')
+        print((filename+ ' is successfully downloaded locally '))
         print('Starting Google Drive upload.....')
     return filename
