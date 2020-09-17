@@ -29,19 +29,19 @@ def download(url):
 	extract_filename = {}
 	#try:
 	with youtube_dl.YoutubeDL(extract_filename) as ydl:
-		info_dict = ydl.extract_info(url, download=False)
-      		video_url = info_dict.get("url", None)
-      		video_id = info_dict.get("id", None)
-      		video_title = info_dict.get('title', None)
-		video_thumb_link = info_dict.get('thumbnail', None)
-		filename = str(video_title)
-		filename = re.sub(r'\[\(\)\{\}\<\>\-\|\]', '', filename)
+                info_dict = ydl.extract_info(url, download=False)
+                video_url = info_dict.get("url", None)
+                video_id = info_dict.get("id", None)
+      	        video_title = info_dict.get('title', None)
+	        video_thumb_link = info_dict.get('thumbnail', None)
+	        filename = str(video_title)
+	        filename = re.sub(r'\[\(\)\{\}\<\>\-\|\]', '', filename)
                 filename = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)]]', r'\1', filename)
-		filename = filename.replace("|", "")
-		filename = filename.strip()
-		#urlretrieve(video_thumb_link, filename+".jpg")
-		filename = filename+".mp3"
-		filename = filename.strip()
+                filename = filename.replace("|", "")
+                filename = filename.strip()
+                #urlretrieve(video_thumb_link, filename+".jpg")
+                filename = filename+".mp3"
+                filename = filename.strip()
 
 	"""except Exception as e:
 		print(e)
