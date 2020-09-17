@@ -17,7 +17,7 @@ from oauth2client.client import OAuth2WebServerFlow
 from oauth2client.file import Storage
 from oauth2client import file, client, tools
 import httplib2
-from credentials import Creds
+from modules.credentials import Creds
 
 def upload(filename):
 	logging.basicConfig(level="ERROR")
