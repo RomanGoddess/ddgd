@@ -26,14 +26,14 @@ def download(url, userfile):
     filename='none'
     try:
         ssl._create_default_https_context = ssl._create_unverified_context
-	filename = wget.download(url)
+        filename = wget.download(url)
         name = re.sub('%20', ' ', filename)
-	if userfile:
-        	filename = os.rename(filename, userfile)
-        	filename = userfile
-	else:
-		filename = os.rename(filename, name)
-        	filename = name
+        if userfile:
+                filename = os.rename(filename, userfile)
+                filename = userfile
+        else:
+                filename = os.rename(filename, name)
+                filename = name
     except Exception as e:
         print("Error! Unable to download file.")
         print(e)
