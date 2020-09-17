@@ -7,8 +7,8 @@ import subprocess
 import os
 import logging
 import re
-import httplib
-import urllib2
+import http.client
+import urllib.request, urllib.error, urllib.parse
 import json
 import html
 import telegram
